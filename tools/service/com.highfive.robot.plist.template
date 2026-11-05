@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- The high-five server as a macOS login service: starts at login with the arm ON, restarts if it stops.
+     Install / remove: tools/service/install.sh / tools/service/install.sh --remove  (page: http://localhost:8091) -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.highfive.robot</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__REPO__/.venv/bin/python</string>
+    <string>tools/highfive.py</string>
+    <string>--armed</string>
+  </array>
+  <key>WorkingDirectory</key><string>__REPO__</string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>StandardOutPath</key><string>__HOME__/Library/Logs/highfive.log</string>
+  <key>StandardErrorPath</key><string>__HOME__/Library/Logs/highfive.log</string>
+</dict>
+</plist>
