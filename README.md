@@ -17,6 +17,8 @@ Andris Gauracs built Greg by hand. [Claude](https://claude.com/claude-code) wrot
 3. A **calibrated model** turns the palm's position in the picture into joint angles. A small learned model picks the wrist and twist, so Greg's palm lines up with yours.
 4. The **arm** (ESP32-S3 and five servos) strikes about 3 cm past the touching point at full speed, then goes home.
 
+![Greg's CAD model turning as a blue wireframe](docs/media/greg_wireframe.gif)
+
 ## What's in here
 
 | Folder | Contents |
